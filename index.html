@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy 20th Birthday, My Love</title>
+<title>Happy 20th Birthday, Lulama</title>
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -650,18 +650,14 @@ body{
   <div class="sec-eyebrow">✦ A Letter From My Heart ✦</div>
   <div class="sec-title">Words I carry<br>for you every day</div>
   <div class="letter-text">
-  <p>From the moment you entered my life, something quietly changed. The silence felt warmer, the days a little brighter, 
-    and somehow, without even trying, you made the world feel like it finally made sense. It’s strange to think there was ever a
-    time when you were just a stranger to me—because now, I can hardly remember what my world felt like without you in it.</p> 
-    <p>Watching you grow into the woman you’re becoming has been one of the greatest privileges of my life. There’s a strength in the way you carry 
-      yourself, a grace in the way you move through the world, and a quiet fire within you that I don’t think you fully recognize yet. But I see it—I’ve always 
-      seen it.</p>
+    <p>From the moment you entered my life, something shifted — the quiet became warmer, the days became lighter, and without even meaning to, you made the world make sense to me. You were a stranger once. I can barely remember that version of the world.</p>
+    <p>Watching you grow into the woman you are becoming has been one of the great privileges of my life. You carry strength in the way you speak, grace in the way you move, and a quiet fire that I don't think you fully see in yourself yet. But I see it. I always have.</p>
     <div class="verse-block">
       "She is clothed with strength and dignity,<br>and she laughs without fear of the future."<br>
       <strong>— Proverbs 31:25</strong>
     </div>
     <p>In your strength, I see the reflection of divine purpose — a woman forged in quiet courage, walking through each day with the grace of one who knows her worth is written in eternal ink. Your dignity isn't just in how you carry yourself, but in how you lift others, how you speak truth with love, how you stand firm in the face of storms that would scatter lesser hearts.</p>
-    <p>I love what God is doing in and through you, Sthandwa Sam. This chapter — your twenties — is going to be extraordinary. Not because everything will be perfect, but because of <em>who you are</em> walking into it as.</p>
+    <p>I love what God is doing in and through you, Standwa Sam. This chapter — your twenties — is going to be extraordinary. Not because everything will be perfect, but because of <em>who you are</em> walking into it as.</p>
     <p>Today I celebrate you. Not just the birthday, but the entire glorious fact of you — every laugh, every quiet moment, every dream you've ever let me witness. You deserve all of it. And infinitely more.</p>
     <div class="verse-block">
       "The Lord will guide you always;<br>he will satisfy your needs in a sun-scorched land."<br>
@@ -727,7 +723,7 @@ body{
 
 <div class="cd-wrap reveal">
   <div class="sec-eyebrow" style="display:inline-block">✦ The Moment Arrives ✦</div>
-   <div class="sec-title" style="text-align:center">She has been twenty<br><em style="color:var(--rose)">for...</em></div>
+  <div class="sec-title" style="text-align:center">She has been twenty<br><em style="color:var(--rose)">for...</em></div>
   <div class="cd-grid" id="cdGrid"></div>
 </div>
 
@@ -834,7 +830,7 @@ let pi=0,pSlides=[],pDotEls=[]
 for(let i=0;i<20;i++){
   const s=document.createElement('div');s.className='c-slide'+(i===0?' on':'')
   // To use real images replace the next line with: s.innerHTML=`<img src="images/img${i+1}.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:22px">`
-s.innerHTML=`<img src="${i+1}.jpeg" style="width:100%;height:100%;object-fit:contain;border-radius:22px">`
+s.innerHTML=`<img src="images/${i+1}.jpeg" style="width:100%;height:100%;object-fit:contain;border-radius:22px">`
   pf.appendChild(s);pSlides.push(s)
   const d=document.createElement('div');d.className='c-dot'+(i===0?' on':'');d.addEventListener('click',()=>goPh(i));pdts.appendChild(d);pDotEls.push(d)
 }
@@ -861,8 +857,25 @@ setInterval(()=>goVid(vi+1),5500)
 /* COUNTDOWN */
 const cg=document.getElementById('cdGrid')
 ;['d','h','m','s'].forEach((k,i)=>{const c=document.createElement('div');c.className='cd-cell';c.innerHTML=`<div class="cd-num" id="cd-${k}">00</div><div class="cd-lbl">${['Days','Hours','Minutes','Seconds'][i]}</div>`;cg.appendChild(c)})
- <div class="sec-title" style="text-align:center">She has been twenty<br><em style="color:var(--rose)">for...</em></div>
-  function tickCD(){const t=getCD();['d','h','m','s'].forEach(k=>{const e=document.getElementById('cd-'+k);if(e)e.textContent=String(t[k]).padStart(2,'0')})}
+function getCD(){
+  // Set her exact 20th birthday here: new Date(Year, MonthIndex, Day, Hours, Minutes, Seconds)
+  // Remember: January is 0, February is 1, etc.
+  // Example below is set for January 15, 2026 at midnight:
+  const bd = new Date(2026, 3, 18, 0, 0, 0); 
+  
+  const now = new Date();
+  
+  // Calculate the time passed SINCE the birthday
+  const diff = Math.max(0, now - bd); 
+  const s = Math.floor(diff / 1000);
+  
+  return {
+    d: Math.floor(s / 86400),
+    h: Math.floor((s % 86400) / 3600),
+    m: Math.floor((s % 3600) / 60),
+    s: s % 60
+  };
+}function tickCD(){const t=getCD();['d','h','m','s'].forEach(k=>{const e=document.getElementById('cd-'+k);if(e)e.textContent=String(t[k]).padStart(2,'0')})}
 tickCD();setInterval(tickCD,1000)
 
 /* SCROLL REVEAL */
