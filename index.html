@@ -830,7 +830,7 @@ let pi=0,pSlides=[],pDotEls=[]
 for(let i=0;i<20;i++){
   const s=document.createElement('div');s.className='c-slide'+(i===0?' on':'')
   // To use real images replace the next line with: s.innerHTML=`<img src="images/img${i+1}.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:22px">`
-s.innerHTML=`<img src="images/${i+1}.jpeg" style="width:100%;height:100%;object-fit:contain;border-radius:22px">`
+s.innerHTML=`<img src="${i+1}.jpeg" style="width:100%;height:100%;object-fit:contain;border-radius:22px">`
   pf.appendChild(s);pSlides.push(s)
   const d=document.createElement('div');d.className='c-dot'+(i===0?' on':'');d.addEventListener('click',()=>goPh(i));pdts.appendChild(d);pDotEls.push(d)
 }
