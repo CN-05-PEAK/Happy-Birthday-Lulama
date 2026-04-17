@@ -727,7 +727,7 @@ body{
 
 <div class="cd-wrap reveal">
   <div class="sec-eyebrow" style="display:inline-block">✦ The Moment Arrives ✦</div>
-  <div class="sec-title" style="text-align:center">She turns twenty<br><em style="color:var(--rose)">in...</em></div>
+   <div class="sec-title" style="text-align:center">She has been twenty<br><em style="color:var(--rose)">for...</em></div>
   <div class="cd-grid" id="cdGrid"></div>
 </div>
 
@@ -861,8 +861,8 @@ setInterval(()=>goVid(vi+1),5500)
 /* COUNTDOWN */
 const cg=document.getElementById('cdGrid')
 ;['d','h','m','s'].forEach((k,i)=>{const c=document.createElement('div');c.className='cd-cell';c.innerHTML=`<div class="cd-num" id="cd-${k}">00</div><div class="cd-lbl">${['Days','Hours','Minutes','Seconds'][i]}</div>`;cg.appendChild(c)})
-function getCD(){const now=new Date(),bd=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,0),diff=Math.max(0,bd-now),s=Math.floor(diff/1000);return{d:Math.floor(s/86400),h:Math.floor((s%86400)/3600),m:Math.floor((s%3600)/60),s:s%60}}
-function tickCD(){const t=getCD();['d','h','m','s'].forEach(k=>{const e=document.getElementById('cd-'+k);if(e)e.textContent=String(t[k]).padStart(2,'0')})}
+ <div class="sec-title" style="text-align:center">She has been twenty<br><em style="color:var(--rose)">for...</em></div>
+  function tickCD(){const t=getCD();['d','h','m','s'].forEach(k=>{const e=document.getElementById('cd-'+k);if(e)e.textContent=String(t[k]).padStart(2,'0')})}
 tickCD();setInterval(tickCD,1000)
 
 /* SCROLL REVEAL */
